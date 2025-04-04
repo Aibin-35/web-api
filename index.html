@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My YouTube</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      margin: 0;
+      background-image: url('images.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      color: #ff0202;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .title a {
+      text-decoration: none;
+      color: #ff0202;
+    }
+
+    .title a:hover {
+      text-decoration: underline;
+    }
+
+    .video {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 16px;
+      background-color: #c4302b;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    #pagination {
+      margin: 30px 0;
+      display: flex;
+      gap: 10px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 1rem;
+      width: 60%;
+      margin-right: 10px;
+    }
+
+    @media (max-width: 600px) {
+      iframe {
+        height: 200px;
+      }
+      input[type="text"] {
+        width: 60%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="title"><a href="index.html">My YouTube</a></h1>
+  </header>
+
+  <div>
+    <input type="text" id="searchInput" placeholder="Search YouTube videos..." />
+    <button onclick="searchVideos()">Search</button>
+  </div>
+
+  <h2>Search Results</h2>
+  <div id="results"></div>
+
+  <div id="pagination">
+    <button onclick="prevPage()" id="prevBtn" disabled>Previous</button>
+    <button onclick="nextPage()" id="nextBtn" disabled>Next</button>
+  </div>
+
+  <h2>Your Favorites</h2>
+  <div id="favorites"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
